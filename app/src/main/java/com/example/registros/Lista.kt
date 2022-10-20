@@ -2,8 +2,10 @@ package com.example.registros
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import com.example.registros.Modelo.Almacen
+import com.example.registros.Modelo.Persona
 import com.example.registros.databinding.ActivityListaBinding
-import com.example.registros.databinding.ActivityMainBinding
 
 
 class Lista : AppCompatActivity() {
@@ -12,6 +14,11 @@ class Lista : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+        val adaptador= ArrayAdapter(this,R.layout.item_lista,R.id.textView,Almacen.listaPersonas)
+        binding.spLista.adapter=adaptador
 
         binding.btnVolverLista.setOnClickListener{
             finish()
