@@ -42,7 +42,12 @@ class MainActivity : AppCompatActivity() {
             var intentRegistro = Intent(this, Lista::class.java)
             startActivity(intentRegistro)
         }
+        binding.btnModificar.setOnClickListener {
 
+            val intent = Intent(this, Modificar::class.java)
+            resultLauncher.launch(intent)
+
+        }
 
     }
 }
